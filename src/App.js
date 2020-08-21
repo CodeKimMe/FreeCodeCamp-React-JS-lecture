@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import products from './products'
+import Product from './Product'
+import todosData from './todosData'
+import TodoItem from './TodoItem'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//const array = products.map(item => <Product key = {item.id} product = {item} />);
+//const todoComponents = todosData.map(item => <TodoItem key = {item.id} todo = {item} />);
+
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      name: "Kim",
+      age: 27
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.name}</h1>
+        <h3>{this.state.age} years old</h3>
+      </div>
+    )
+  }
 }
+
 
 export default App;
