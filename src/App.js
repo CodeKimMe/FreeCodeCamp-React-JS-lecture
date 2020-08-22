@@ -13,16 +13,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: "Kim",
-      age: 27
+      todos: todosData
     }
   }
 
   render() {
+    const todosList = this.state.todos.map(item => <TodoItem key = {item.id} todo = {item} />);
     return (
       <div>
-        <h1>{this.state.name}</h1>
-        <h3>{this.state.age} years old</h3>
+        {todosList};
       </div>
     )
   }
