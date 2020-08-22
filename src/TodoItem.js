@@ -1,6 +1,28 @@
 import React from 'react';
 
 
+
+class TodoItem extends React.Component {
+
+  constructor() {
+    super();
+  }
+
+  render() {
+    return (
+      <div>
+        <input
+          type = "checkbox"
+          checked = {this.props.todo.completed}
+          onChange = {() => this.props.handleChange(this.props.todo.id)}
+        />
+        <p>{this.props.todo.text}</p>
+      </div>
+    )
+  }
+}
+
+/*
 function TodoItem(props) {
   return (
     <div>
@@ -9,6 +31,6 @@ function TodoItem(props) {
     </div>
   )
 }
-
+*/
 
 export default TodoItem;
